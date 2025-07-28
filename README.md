@@ -1,2 +1,3 @@
 # gravityFormer
-Game in godot
+Platformer game in godot
+You can switch gravity
