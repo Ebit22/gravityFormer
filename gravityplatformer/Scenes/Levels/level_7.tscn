@@ -288,7 +288,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_srh42")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8jk0b"]
-a = Vector2(0, -74)
+a = Vector2(0, -70)
 b = Vector2(0, 54)
 
 [node name="Level7" type="Node2D"]
@@ -313,7 +313,7 @@ position = Vector2(789, 12)
 
 [node name="JupiterButton" parent="." instance=ExtResource("5_gh42n")]
 z_index = -1
-position = Vector2(251, 19)
+position = Vector2(252, 19)
 collision_layer = 1
 
 [node name="Door" type="TileMapLayer" parent="JupiterButton"]
@@ -322,30 +322,34 @@ tile_map_data = PackedByteArray("AAAXAPn/AAADAAIAAAAXAPr/AAADAAIAAAAXAPv/AAADAAI
 tile_set = SubResource("TileSet_dx26c")
 script = ExtResource("6_uwy1w")
 
-[node name="RigidBody2D" parent="." instance=ExtResource("7_4kexf")]
+[node name="Stone" parent="." instance=ExtResource("7_4kexf")]
 mass = 100.0
+gravity_scale = 1.0
 
 [node name="Laser" type="Node2D" parent="."]
-position = Vector2(377, -25)
+position = Vector2(271, -25)
 script = ExtResource("8_jnky5")
 
 [node name="Area2D" type="Area2D" parent="Laser"]
+visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Laser/Area2D"]
 position = Vector2(1, 1)
 shape = SubResource("SegmentShape2D_8jk0b")
 
-[node name="Line2D" type="Line2D" parent="Laser"]
+[node name="Killzone" parent="Laser" instance=ExtResource("3_turgw")]
+position = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser/Killzone"]
+position = Vector2(-2, 0)
+shape = SubResource("SegmentShape2D_8jk0b")
+
+[node name="Line2D" type="Line2D" parent="Laser/Killzone"]
 z_index = -1
-position = Vector2(-758, 21)
-points = PackedVector2Array(758, -98, 758, 37)
+position = Vector2(-759, 20)
+points = PackedVector2Array(758, -142, 758, 37)
 width = 5.0
 default_color = Color(1, 0, 0, 1)
 
-[node name="Killzone" parent="Laser/Line2D" instance=ExtResource("3_turgw")]
-position = Vector2(759, -20)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser/Line2D/Killzone"]
-shape = SubResource("SegmentShape2D_8jk0b")
-
 [connection signal="area_entered" from="Laser/Area2D" to="Laser" method="_on_area_2d_area_entered"]
+[connection signal="body_exited" from="Laser/Killzone" to="Laser/Killzone" method="_on_body_exited"]

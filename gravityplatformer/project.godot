@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 gb="*res://global.gd"
 
+[global_group]
+
+player=""
+
 [input]
 
 Jump={

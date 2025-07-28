@@ -252,6 +252,11 @@ z_index = -1
 position = Vector2(255, -82)
 scale = Vector2(0.758721, 0.758721)
 
+[node name="Killzone2" parent="Spikes/Spike2" instance=ExtResource("3_0s5jk")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes/Spike2/Killzone2"]
+polygon = PackedVector2Array(-32.9502, 19.7701, -1.31802, -59.3103, 23.7241, 19.7701)
+
 [node name="Killzone2" parent="." instance=ExtResource("3_0s5jk")]
 position = Vector2(258, -194)
 
