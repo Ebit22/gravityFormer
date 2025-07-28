@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw4dtl6ejhake"]
+
+[ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="1_deu35"]
+[ext_resource type="Script" path="res://Scripts/win.gd" id="1_rmjfb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgrbh"]
+radius = 61.4003
+
+[sub_resource type="Animation" id="Animation_gi6ut"]
+resource_name = "Turning"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.56905, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.785398, -0.785398, 0.785398]
+}
+
+[sub_resource type="Animation" id="Animation_60x1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.785398]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8w1h3"]
+_data = {
+"RESET": SubResource("Animation_60x1v"),
+"Turning": SubResource("Animation_gi6ut")
+}
+
+[node name="Win" type="Area2D"]
+position = Vector2(0, 1)
+scale = Vector2(0.183001, 0.183001)
+script = ExtResource("1_rmjfb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+texture = ExtResource("1_deu35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bgrbh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8w1h3")
+}
+autoplay = "Turning"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

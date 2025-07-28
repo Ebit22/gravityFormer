@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bigl0aarv6dmf"]
+
+[ext_resource type="Script" path="res://Scripts/jupiter_button.gd" id="1_rljrj"]
+[ext_resource type="Texture2D" uid="uid://dg8tcv3p3qvji" path="res://Assets/Button.png" id="2_0yrvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb6qs"]
+atlas = ExtResource("2_0yrvl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo54v"]
+atlas = ExtResource("2_0yrvl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qndjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb6qs")
+}],
+"loop": true,
+"name": &"Non pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo54v")
+}],
+"loop": true,
+"name": &"Pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx0pb"]
+size = Vector2(18, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wu20"]
+size = Vector2(18, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndq2i"]
+size = Vector2(18, 5)
+
+[node name="JupiterButton" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_rljrj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -3)
+sprite_frames = SubResource("SpriteFrames_qndjg")
+animation = &"Pressed"
+autoplay = "Non pressed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 6)
+shape = SubResource("RectangleShape2D_bx0pb")
+
+[node name="Pressed" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7.5)
+shape = SubResource("RectangleShape2D_2wu20")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_ndq2i")
+
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
