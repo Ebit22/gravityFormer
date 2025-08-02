@@ -1,0 +1,126 @@
+[gd_scene load_steps=14 format=3 uid="uid://dv64gwspylb0m"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_hjf4a"]
+[ext_resource type="Texture2D" uid="uid://rftsk3bvb7tg" path="res://Assets/Astro.png" id="2_5w6um"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u0af"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb77d"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7333u"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw2p1"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yq47"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oe5k"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrkm0"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv31i"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbgqx"]
+atlas = ExtResource("2_5w6um")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4gmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u0af")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb77d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7333u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw2p1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yq47")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2oe5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrkm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv31i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbgqx")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gei5t"]
+size = Vector2(50, 133.429)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(0.07, 0.07)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_hjf4a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.85714, -19.8571)
+scale = Vector2(6.55357, 6.55357)
+sprite_frames = SubResource("SpriteFrames_m4gmd")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.71428)
+shape = SubResource("RectangleShape2D_gei5t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -220.0
+offset_right = 675.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(-810, 770)
+theme_override_font_sizes/font_size = 80
+text = "Planet: Earth"
+horizontal_alignment = 1
+autowrap_mode = 2

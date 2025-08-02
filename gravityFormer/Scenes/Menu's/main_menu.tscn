@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://dknb7spwwvs4n"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_eu4bg"]
+[ext_resource type="Texture2D" uid="uid://d2hdfx7x2fqd8" path="res://Assets/Tumbnail.png" id="2_b3uys"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qd7ou"]
+texture = ExtResource("2_b3uys")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwflx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 488.0
+offset_top = 255.0
+offset_right = -577.0
+offset_bottom = -245.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eu4bg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -488.0
+offset_top = -251.0
+offset_right = 578.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qd7ou")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -183.0
+offset_right = 160.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="Levels" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwflx")
+text = "Levels"
+
+[node name="Endless" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwflx")
+text = "Endless 00"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwflx")
+text = "Options"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwflx")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -274.0
+offset_top = -251.0
+offset_right = 274.0
+offset_bottom = -141.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "Gravityformer"
+
+[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="VBoxContainer/Endless" to="." method="_on_endless_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://yvekv2hl1oa8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1w7a"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sound"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_n1w7a")
+
+[node name="SFX" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXbutton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2

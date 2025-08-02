@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://brxfi76lf8w65"]
+
+[ext_resource type="PackedScene" uid="uid://dkouq6ah8oa6j" path="res://Scenes/killzone.tscn" id="1_4d4ew"]
+
+[node name="Spike" type="StaticBody2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.681317, 0, 0.131098, 1)
+texture_scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-1, -62, 39, 59, -45, 59)
+
+[node name="Killzone" parent="." instance=ExtResource("1_4d4ew")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Killzone"]
+polygon = PackedVector2Array(38, 58, -45, 58, -1, -60)
