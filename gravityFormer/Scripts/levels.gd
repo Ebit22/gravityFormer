@@ -8,6 +8,18 @@ func _ready() -> void:
 			$Levels.get_child(i).disabled = true
 		else:
 			$Levels.get_child(i).disabled = false
+	
+	
+	for i in range(gb.levels.size()):
+		$Levels.get_child(i).get_child(0).text = str(gb.stars[i])
+		if str(gb.levels[i]) != "🔒":
+			$Levels.get_child(i).get_child(0).visible = true
+		else:
+			$Levels.get_child(i).get_child(0).visible = false
+		if str(gb.stars[i]) == "✰":
+			$Levels.get_child(i).get_child(0).add_theme_color_override("font_color", Color(0, 0, 0))
+		else:
+			$Levels.get_child(i).get_child(0).add_theme_color_override("font_color", Color(1, 1, 0))
 
 func _on_level_1_pressed() -> void:
 	gb.level = 1

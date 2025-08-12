@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dsxtob78o88k7"]
+[gd_scene load_steps=10 format=4 uid="uid://dsxtob78o88k7"]
 
 [ext_resource type="PackedScene" uid="uid://dv64gwspylb0m" path="res://Scenes/Body's/player.tscn" id="1_x1fq2"]
 [ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="2_p0kiw"]
 [ext_resource type="PackedScene" uid="uid://dkouq6ah8oa6j" path="res://Scenes/Zones/killzone.tscn" id="3_sy3n6"]
 [ext_resource type="PackedScene" uid="uid://brxfi76lf8w65" path="res://Scenes/Body's/Spike.tscn" id="4_lys63"]
 [ext_resource type="PackedScene" uid="uid://cw4dtl6ejhake" path="res://Scenes/Zones/win.tscn" id="5_edbnf"]
+[ext_resource type="PackedScene" uid="uid://xunodpbm8k65" path="res://Scenes/Zones/star.tscn" id="6_nurhp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aubca"]
 texture = ExtResource("2_p0kiw")
@@ -248,3 +249,7 @@ shape = SubResource("WorldBoundaryShape2D_6m582")
 position = Vector2(669, 13)
 
 [node name="Player" parent="." instance=ExtResource("1_x1fq2")]
+
+[node name="Star" parent="." instance=ExtResource("6_nurhp")]
+position = Vector2(1, 199)
+scale = Vector2(0.32, 0.32)

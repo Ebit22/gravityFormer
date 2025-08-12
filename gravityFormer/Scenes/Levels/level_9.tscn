@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bvwnxlsvfyp8k"]
+[gd_scene load_steps=14 format=4 uid="uid://bvwnxlsvfyp8k"]
 
 [ext_resource type="PackedScene" uid="uid://dv64gwspylb0m" path="res://Scenes/Body's/player.tscn" id="1_mt8d6"]
 [ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="2_bx10a"]
 [ext_resource type="PackedScene" uid="uid://dkouq6ah8oa6j" path="res://Scenes/Zones/killzone.tscn" id="3_iqg84"]
 [ext_resource type="PackedScene" uid="uid://cw4dtl6ejhake" path="res://Scenes/Zones/win.tscn" id="4_3pdg0"]
 [ext_resource type="PackedScene" uid="uid://bigl0aarv6dmf" path="res://Scenes/Body's/jupiter_button.tscn" id="5_en3px"]
+[ext_resource type="PackedScene" uid="uid://xunodpbm8k65" path="res://Scenes/Zones/star.tscn" id="6_cwi4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aubca"]
 texture = ExtResource("2_bx10a")
@@ -392,3 +393,7 @@ scale = Vector2(0.639999, 0.639999)
 [node name="TileMapLayer" type="TileMapLayer" parent="JupiterButton"]
 tile_map_data = PackedByteArray("AAA4ACMAAAADAAIAAAA5ACMAAAADAAIAAAA6ACMAAAADAAIAAAA6ACQAAAADAAIAAAA7ACQAAAADAAIAAAA7ACMAAAADAAIAAAA8ACQAAAADAAIAAAA8ACUAAAADAAIAAAA7ACUAAAADAAIAAAA5ACQAAAADAAIAAAA4ACQAAAADAAIAAAA4ACUAAAADAAIAAAA5ACUAAAADAAIAAAA6ACUAAAADAAIAAAA8ACMAAAADAAIAAAA3ACMAAAADAAIAAAA3ACQAAAADAAIAAAA3ACUAAAADAAIAAAA=")
 tile_set = SubResource("TileSet_3b36n")
+
+[node name="Star" parent="." instance=ExtResource("6_cwi4h")]
+position = Vector2(-221, -713)
+scale = Vector2(0.32, 0.32)

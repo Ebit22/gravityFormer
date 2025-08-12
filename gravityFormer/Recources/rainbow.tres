@@ -1,0 +1,78 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cboec4su0xdb8"]
+
+[ext_resource type="Texture2D" uid="uid://br8nemejl3j56" path="res://Assets/Astrocolor.png" id="1_fkfcx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k4uh"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8y03"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2tme"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys154"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t4ny"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieqo2"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh58b"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neidl"]
+atlas = ExtResource("1_fkfcx")
+region = Rect2(64, 64, 32, 32)
+
+[resource]
+resource_name = "Rainbow"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k4uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8y03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2tme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys154")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t4ny")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieqo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh58b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neidl")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]

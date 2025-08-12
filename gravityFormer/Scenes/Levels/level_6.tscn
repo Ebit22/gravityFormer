@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://crxaer3onecwf"]
+[gd_scene load_steps=11 format=4 uid="uid://crxaer3onecwf"]
 
 [ext_resource type="PackedScene" uid="uid://dv64gwspylb0m" path="res://Scenes/Body's/player.tscn" id="1_qj3df"]
 [ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="2_sva50"]
 [ext_resource type="PackedScene" uid="uid://dkouq6ah8oa6j" path="res://Scenes/Zones/killzone.tscn" id="3_0s5jk"]
 [ext_resource type="PackedScene" uid="uid://cw4dtl6ejhake" path="res://Scenes/Zones/win.tscn" id="4_naisg"]
 [ext_resource type="PackedScene" uid="uid://brxfi76lf8w65" path="res://Scenes/Body's/Spike.tscn" id="5_piyfd"]
+[ext_resource type="PackedScene" uid="uid://xunodpbm8k65" path="res://Scenes/Zones/star.tscn" id="6_64i1v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aubca"]
 texture = ExtResource("2_sva50")
@@ -269,3 +270,7 @@ default_color = Color(0.788235, 0.0705882, 0.113725, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone2"]
 position = Vector2(17, -3)
 shape = SubResource("RectangleShape2D_2fyig")
+
+[node name="Star" parent="." instance=ExtResource("6_64i1v")]
+position = Vector2(48, -473)
+scale = Vector2(0.32, 0.32)

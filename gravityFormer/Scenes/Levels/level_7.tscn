@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bbm1xsan286uq"]
+[gd_scene load_steps=13 format=4 uid="uid://bbm1xsan286uq"]
 
 [ext_resource type="PackedScene" uid="uid://dv64gwspylb0m" path="res://Scenes/Body's/player.tscn" id="1_qdjyl"]
 [ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="2_xslko"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cw4dtl6ejhake" path="res://Scenes/Zones/win.tscn" id="4_tqk18"]
 [ext_resource type="PackedScene" uid="uid://bigl0aarv6dmf" path="res://Scenes/Body's/jupiter_button.tscn" id="5_gh42n"]
 [ext_resource type="PackedScene" uid="uid://crnolil3fb1he" path="res://Scenes/Body's/rock.tscn" id="7_4kexf"]
+[ext_resource type="PackedScene" uid="uid://xunodpbm8k65" path="res://Scenes/Zones/star.tscn" id="7_nfyfp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aubca"]
 texture = ExtResource("2_xslko")
@@ -318,3 +319,7 @@ tile_set = SubResource("TileSet_dx26c")
 [node name="Stone" parent="." instance=ExtResource("7_4kexf")]
 mass = 100.0
 gravity_scale = 1.0
+
+[node name="Star" parent="." instance=ExtResource("7_nfyfp")]
+position = Vector2(113, -361)
+scale = Vector2(0.32, 0.32)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://f17yvvodttvq"]
+[gd_scene load_steps=9 format=4 uid="uid://f17yvvodttvq"]
 
 [ext_resource type="PackedScene" uid="uid://dv64gwspylb0m" path="res://Scenes/Body's/player.tscn" id="1_l2u7w"]
 [ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="2_is066"]
 [ext_resource type="PackedScene" uid="uid://dkouq6ah8oa6j" path="res://Scenes/Zones/killzone.tscn" id="3_q3lh7"]
 [ext_resource type="PackedScene" uid="uid://cw4dtl6ejhake" path="res://Scenes/Zones/win.tscn" id="4_uyq5a"]
+[ext_resource type="PackedScene" uid="uid://xunodpbm8k65" path="res://Scenes/Zones/star.tscn" id="5_a5b0t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aubca"]
 texture = ExtResource("2_is066")
@@ -241,3 +242,7 @@ tile_set = SubResource("TileSet_vr5ch")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(241, 278)
 shape = SubResource("WorldBoundaryShape2D_6m582")
+
+[node name="Star" parent="." instance=ExtResource("5_a5b0t")]
+position = Vector2(-641, -9)
+scale = Vector2(0.320039, 0.320039)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://kwjcu688utfu"]
+[gd_scene load_steps=12 format=4 uid="uid://kwjcu688utfu"]
 
 [ext_resource type="PackedScene" uid="uid://dv64gwspylb0m" path="res://Scenes/Body's/player.tscn" id="1_vi84a"]
 [ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="2_6ucxf"]
 [ext_resource type="PackedScene" uid="uid://dkouq6ah8oa6j" path="res://Scenes/Zones/killzone.tscn" id="3_2w3nh"]
 [ext_resource type="PackedScene" uid="uid://cw4dtl6ejhake" path="res://Scenes/Zones/win.tscn" id="4_6nhg5"]
 [ext_resource type="PackedScene" uid="uid://bigl0aarv6dmf" path="res://Scenes/Body's/jupiter_button.tscn" id="5_pbok0"]
+[ext_resource type="PackedScene" uid="uid://xunodpbm8k65" path="res://Scenes/Zones/star.tscn" id="6_2kjut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aubca"]
 texture = ExtResource("2_6ucxf")
@@ -312,3 +313,7 @@ position = Vector2(251, 19)
 position = Vector2(-251, -20)
 tile_map_data = PackedByteArray("AAAXAAEAAAADAAIAAAAXAAAAAAADAAIAAAAXAP//AAADAAIAAAAXAP7/AAADAAIAAAAXAP3/AAADAAIAAAAXAPz/AAADAAIAAAAXAPv/AAADAAIAAAAXAPr/AAADAAIAAAAZAAIAAAADAAIAAAAZAAMAAAADAAIAAAAaAAIAAAADAAIAAAAaAAMAAAADAAIAAAAbAAIAAAADAAIAAAAbAAMAAAADAAIAAAAcAAIAAAADAAIAAAAcAAMAAAADAAIAAAA=")
 tile_set = SubResource("TileSet_dx26c")
+
+[node name="Star" parent="." instance=ExtResource("6_2kjut")]
+position = Vector2(-400, 119)
+scale = Vector2(0.32, 0.32)

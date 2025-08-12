@@ -75,7 +75,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 77
 theme_override_styles/normal = SubResource("StyleBoxFlat_hwflx")
-text = "Options"
+text = "Skins"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2

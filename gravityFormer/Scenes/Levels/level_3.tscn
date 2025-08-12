@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4eranxj1nvmc"]
+[gd_scene load_steps=9 format=4 uid="uid://c4eranxj1nvmc"]
 
 [ext_resource type="PackedScene" uid="uid://dv64gwspylb0m" path="res://Scenes/Body's/player.tscn" id="1_y85b1"]
 [ext_resource type="Texture2D" uid="uid://wgl2ccvwq33i" path="res://icon.svg" id="2_ha7q6"]
 [ext_resource type="PackedScene" uid="uid://dkouq6ah8oa6j" path="res://Scenes/Zones/killzone.tscn" id="3_teger"]
 [ext_resource type="PackedScene" uid="uid://cw4dtl6ejhake" path="res://Scenes/Zones/win.tscn" id="4_li5ts"]
+[ext_resource type="PackedScene" uid="uid://xunodpbm8k65" path="res://Scenes/Zones/star.tscn" id="5_28xow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aubca"]
 texture = ExtResource("2_ha7q6")
@@ -248,3 +249,7 @@ shape = SubResource("WorldBoundaryShape2D_6m582")
 position = Vector2(694, 11)
 
 [node name="Player" parent="." instance=ExtResource("1_y85b1")]
+
+[node name="Star" parent="." instance=ExtResource("5_28xow")]
+position = Vector2(-527, -41)
+scale = Vector2(0.32, 0.32)
